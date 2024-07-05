@@ -13,7 +13,7 @@
     "lint:staged": "lint-staged",
     "test": "vitest",
     "test:run": "vitest run",
-    "prepare": "husky",
+    "prepare": "cd .. && npx husky class-components/.husky",
     "test:coverage": "npx vitest --coverage"
   },
   "lint-staged": {
