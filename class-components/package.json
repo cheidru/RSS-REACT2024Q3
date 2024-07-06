@@ -11,16 +11,14 @@
     "format": "prettier --write src/**/*.{js,ts,tsx,scss,css,json}",
     "preview": "vite preview",
     "lint:staged": "lint-staged",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "prepare": "cd .. && npx husky class-components/.husky",
-    "test:coverage": "npx vitest --coverage"
+    "prepare": "cd .. && npx husky class-components/.husky"
   },
   "lint-staged": {
     "src/**/*.{js,ts,tsx,scss,css,json}": "prettier --write",
     "src/**/*.{js,ts,tsx}": "eslint --fix --max-warnings=0"
   },
   "dependencies": {
+    "npm": "^10.6.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
