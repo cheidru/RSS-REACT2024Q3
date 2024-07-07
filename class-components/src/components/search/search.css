@@ -1,0 +1,32 @@
+input {
+  padding: 0;
+}
+
+.form-search {  
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;  
+  padding: 1rem;
+  border-radius: 0.5rem;  
+}
+
+.search-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:bisque;
+}
+
+.search-field {
+  width: 80%;
+  height: 1.5rem;
+  color: gray;
+  padding: 0 0.5rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

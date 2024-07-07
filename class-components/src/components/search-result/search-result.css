@@ -1,0 +1,9 @@
+
+.result-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color:rgb(206, 236, 226);
+}

@@ -1,0 +1,18 @@
+.header {
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 1rem;
+  color: beige;
+  background-color: saddlebrown;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  font-size: 1rem;
+}

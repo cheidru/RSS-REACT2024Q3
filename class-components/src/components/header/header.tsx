@@ -3,11 +3,11 @@ import React from "react";
 class Header extends React.Component {
   render() {
     return (
-      <header className='header'>
+      <div className='header'>
         <div className='header-wrapper'>
-          <div className='header-title'>Search</div>          
+          <div className='header-title'>Search API</div>          
         </div>        
-      </header>
+      </div>
     )
   }
 }
