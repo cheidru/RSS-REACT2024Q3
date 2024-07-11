@@ -1,27 +1,33 @@
 import React from "react";
-// import { apiSearch } from "../../services/api";
+
+// type Props = {
+//   searchResult?: [];
+// }
+
 
 class SearchPanel extends React.Component {
+  
   state = {
     isSubmitDisabled: true,
     searchString: '',
   }
 
-  // handleSubmit(searchResult) {
-  //   const apiSearchResult = apiSearch(this.state.searchString);
-  // }
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log('submitting');
+  }
   render() {
-
     return (
       <div className="panel search-panel">
-        <form className="form-search">
-        {/* <form className="form-search" onSubmit={this.handleSubmit({this.props.searchResult})}> */}
+        <form className="form-search"
+          onSubmit={this.handleSubmit}
+        >
           <input
             type="text"
             title="Search"
             placeholder="Search API"
             className="search-field"
-            value={"searchString"}
+            // value={""}
             onChange={(e) => {this.setState({
               isSubmitDisabled: e.target.value.length > 0 ? false: true,
               searchString: e.target.value
@@ -29,7 +35,7 @@ class SearchPanel extends React.Component {
           />
           <button
             type="submit"
-            className="btn-submit form__login-btn"
+            className="btn-submit form__login-btn active"
             disabled={this.state.isSubmitDisabled}
           >
             Search

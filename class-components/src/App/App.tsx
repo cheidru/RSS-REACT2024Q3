@@ -4,7 +4,7 @@ import ResultPanel from '../components/search-result/search-result';
 import React from "react";
 
 class App extends React.Component {
-  public state = {
+  state = {
     searchResult: []
   }
 
@@ -12,14 +12,18 @@ class App extends React.Component {
     this.setState({searchResult: Object})
   }
 
-  render() {
+  handleSubmit() {
+    console.log('test');
+    // apiSearchResult = apiSearch(this.state.searchString);
+  }
+
+  render() { 
+
     return (
       <>
         <Header />
         <SearchPanel />
         <ResultPanel />
-        {/* <SearchPanel searchResult={this.state.searchResult} />
-        <ResultPanel onChange={this.onChange}/> */}
       </>
     );
   }
