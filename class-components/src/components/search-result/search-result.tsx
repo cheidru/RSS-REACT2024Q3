@@ -1,7 +1,7 @@
 import React from "react";
 
 class ResultPanel extends React.Component {
-  itemList = this.prop.result.map(populate).join('');
+  itemList = this.props.result.map(populate).join('');
   function populate(params:type) {
     
   }
