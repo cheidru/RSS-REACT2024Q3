@@ -15,6 +15,9 @@ class SearchPanel extends React.Component {
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('submitting');
+    // fetch запрос к API и обновление массива searchResult
+    // если нет строки запроса, проверка LS, если нет
+    // записи в LS, запрос на все записиа API
   }
   render() {
     return (

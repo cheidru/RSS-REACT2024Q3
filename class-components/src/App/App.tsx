@@ -22,8 +22,8 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <SearchPanel />
-        <ResultPanel />
+        <SearchPanel result={this.state.searchResult} setState={this.onChange} />
+        <ResultPanel result={this.state.searchResult} />
       </>
     );
   }
