@@ -1,4 +1,5 @@
 import React from "react";
+import apiSearch from "";
 
 // type Props = {
 //   searchResult?: [];
@@ -14,6 +15,7 @@ class SearchPanel extends React.Component {
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    result = apiSearch()
     console.log('submitting');
     // fetch запрос к API и обновление массива searchResult
     // если нет строки запроса, проверка LS, если нет
