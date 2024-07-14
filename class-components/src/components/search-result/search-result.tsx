@@ -1,16 +1,21 @@
 import React from "react";
 
-class ResultPanel extends React.Component {
-  // itemList = this.props.result.map(populate).join('');
-  // function populate(params:type) {
-    
-  // }
+// type Props = {
+//   searchResult?: [];
+//   updateSearchResult?: () => void;
+// }
 
-  render() {
+class ResultPanel extends React.Component {
+
+
+  render() {    
     return (
-      <div className="panel result-panel">
-        {/* {this.itemList} */}
-      </div>
+      <>
+        {console.log('ResultPanel props = ', this.props)}
+        <div className="panel result-panel">
+          {/* {this.props.state.searchResult} */}
+        </div>
+      </>
     )
   }
 }

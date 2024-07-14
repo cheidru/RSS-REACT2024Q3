@@ -3,12 +3,12 @@ import React from "react";
 import apiSearch from "../../services/api";
 // import SearchProp from "../../services/interface"
 
-// type Props = {
-//   searchResult?: [];
-//   updateSearchResult?: () => void;
-// }
+type Props = {
+  searchResult?: [];
+  updateSearchResult?: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-class SearchPanel extends React.Component {
+class SearchPanel extends React.Component<Props> {
   // constructor(props: Props) {
   //   super(props);
   //   console.log('props = ', this.props);
@@ -28,11 +28,15 @@ class SearchPanel extends React.Component {
 
     e.preventDefault()
     const seekResult = apiSearch(this.state.searchString.trim());
-    console.log('seekResult = ',seekResult);
-    this.setState(seekResult);
+    // this.props.updateSearchResult(seekResult.finally)
+    seekResult.then((data) => (console.log('seekResult = ',data)));
+    console.log('searchResult = ',this.props.searchResult);
+    if(this.props.updateSearchResult) this.props.updateSearchResult(['hello']);
+    // this.setState(seekResult);
     this.setState({isSubmitDisabled: true});
     this.setState({inputFocused: false});
-    this.setState({value: ''})
+    this.setState({value: ''});
+    // this.setState(seekResult)
     // console.log('setState = ',);
 
     // fetch запрос к API и обновление массива searchResult

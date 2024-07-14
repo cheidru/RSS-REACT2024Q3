@@ -5,18 +5,13 @@ import React from "react";
 
 type Props = {
   searchResult?: [];
-  updateSearchResult?: () => void;
+  updateSearchResult?: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 class App extends React.Component {
-  constructor(props: Props) {
-    super(props)
-    this.state.updateSearchResult = this.state.updateSearchResult.bind(this)
-  }
 
-
-  state = {
-    searchResult: ['test'],
+  state: Props = {
+    searchResult: [],
     updateSearchResult: () => this.setState({searchResult: Object}),
   }
 
@@ -28,7 +23,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <SearchPanel {...this.state} />
+        <SearchPanel {...this.state }  />
         <ResultPanel {...this.state.searchResult} />
       </>
     );
