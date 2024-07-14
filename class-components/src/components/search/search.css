@@ -30,3 +30,7 @@ input {
   outline: none;
   cursor: pointer;
 }
+
+button:disabled {
+  cursor: unset;
+}

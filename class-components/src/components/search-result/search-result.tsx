@@ -1,15 +1,15 @@
 import React from "react";
 
 class ResultPanel extends React.Component {
-  itemList = this.props.result.map(populate).join('');
-  function populate(params:type) {
+  // itemList = this.props.result.map(populate).join('');
+  // function populate(params:type) {
     
-  }
+  // }
 
   render() {
     return (
       <div className="panel result-panel">
-        {this.itemList}
+        {/* {this.itemList} */}
       </div>
     )
   }

@@ -8,8 +8,7 @@
 // }
 
 
-export function apiSearch(searchString: string) {
+export default function apiSearch(searchString: string) {
   const data = fetch('https://swapi.dev/api/' + searchString);
-  console.log(data);
-  return data
+  return data.then((data) => data.json());
 }

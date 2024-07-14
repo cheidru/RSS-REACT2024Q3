@@ -3,27 +3,33 @@ import SearchPanel from '../components/search/search';
 import ResultPanel from '../components/search-result/search-result';
 import React from "react";
 
+type Props = {
+  searchResult?: [];
+  updateSearchResult?: () => void;
+}
+
 class App extends React.Component {
+  constructor(props: Props) {
+    super(props)
+    this.state.updateSearchResult = this.state.updateSearchResult.bind(this)
+  }
+
+
   state = {
-    searchResult: []
+    searchResult: ['test'],
+    updateSearchResult: () => this.setState({searchResult: Object}),
   }
 
-  onChange = () => {
-    this.setState({searchResult: Object})
-  }
-
-  handleSubmit() {
-    console.log('test');
-    // apiSearchResult = apiSearch(this.state.searchString);
-  }
+  // updateSearchResult = () => {
+  //   this.setState({searchResult: Object})
+  // }
 
   render() { 
-
     return (
       <>
         <Header />
-        <SearchPanel result={this.state.searchResult} setState={this.onChange} />
-        <ResultPanel result={this.state.searchResult} />
+        <SearchPanel {...this.state} />
+        <ResultPanel {...this.state.searchResult} />
       </>
     );
   }
