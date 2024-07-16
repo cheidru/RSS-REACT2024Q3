@@ -14,8 +14,9 @@ class App extends React.Component {
     searchResult: [],
   }
 
-  updateSearchResult = () => {
-    this.setState({searchResult: []})
+  updateSearchResult = (data: []) => {
+    console.log('Updating setState');
+    this.setState({searchResult: data})
   }
 
   render() { 
@@ -23,7 +24,7 @@ class App extends React.Component {
       <>
         <Header />
         <SearchPanel {...this.state } {...this.updateSearchResult} />
-        <ResultPanel {...this.state.searchResult} />
+        <ResultPanel {...this.state} />
       </>
     );
   }

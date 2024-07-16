@@ -1,20 +1,8 @@
 import React from "react";
-// import PropTypes from 'prop-types';
 import apiSearch from "../../services/api";
-// import SearchProp from "../../services/interface"
-
-type Props = {
-  searchResult?: [];
-  updateSearchResult?: React.Dispatch<React.SetStateAction<string[]>>;
-}
+import { Props } from "../../services/interface"
 
 class SearchPanel extends React.Component<Props> {
-  // constructor(props: Props) {
-  //   super(props);
-  //   console.log('props = ', this.props);
-  //   console.log('state = ', props.searchResult);
-  // }
-  
   state = {
     isSubmitDisabled: true,
     searchString: '',
@@ -23,15 +11,20 @@ class SearchPanel extends React.Component<Props> {
     value: '',
   }
 
-
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault()
     const seekResult = apiSearch(this.state.searchString.trim());
     // this.props.updateSearchResult(seekResult.finally)
-    seekResult.then((data) => (console.log('seekResult = ',data)));
-    console.log('searchResult = ',this.props.searchResult);
-    if(this.props.updateSearchResult) this.props.updateSearchResult(['hello']);
+    seekResult.then((data) => {
+      if(this.props.updateSearchResult) this.props.updateSearchResult(data);
+      // this.props.updateSearchResult(data);
+      console.log('seekResult = ',data);
+      console.log('searchResult = ',this.props.searchResult);
+    }
+    );
+  
+    
     // this.setState(seekResult);
     this.setState({isSubmitDisabled: true});
     this.setState({inputFocused: false});
