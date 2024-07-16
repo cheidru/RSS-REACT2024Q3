@@ -12,18 +12,17 @@ class App extends React.Component {
 
   state: Props = {
     searchResult: [],
-    updateSearchResult: () => this.setState({searchResult: Object}),
   }
 
-  // updateSearchResult = () => {
-  //   this.setState({searchResult: Object})
-  // }
+  updateSearchResult = () => {
+    this.setState({searchResult: []})
+  }
 
   render() { 
     return (
       <>
         <Header />
-        <SearchPanel {...this.state }  />
+        <SearchPanel {...this.state } {...this.updateSearchResult} />
         <ResultPanel {...this.state.searchResult} />
       </>
     );
