@@ -1,6 +1,7 @@
 import React from "react";
 import apiSearch from "../../services/api";
 import { Props } from "../../services/interface"
+// import { string } from "prop-types";
 
 class SearchPanel extends React.Component<Props> {
   state = {
@@ -12,16 +13,14 @@ class SearchPanel extends React.Component<Props> {
   }
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-
     e.preventDefault()
+    console.log('this.props = ',this.props);
     const seekResult = apiSearch(this.state.searchString.trim());
-    // this.props.updateSearchResult(seekResult.finally)
-    seekResult.then((data) => {
+    seekResult.then(data => {
       if(this.props.updateSearchResult) this.props.updateSearchResult(data);
-      // this.props.updateSearchResult(data);
       console.log('seekResult = ',data);
-      console.log('searchResult = ',this.props.searchResult);
-    }
+      })
+      .then(() => {console.log('searchResult = ',this.props.searchResult);}
     );
   
     

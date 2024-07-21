@@ -2,14 +2,26 @@ import React from "react";
 import { Props } from "../../services/interface"
 
 class ResultPanel extends React.Component<Props> {
-  render() {    
+
+  render() {
+    console.log('ResultPanel props = ');
+    const searchRes = this.props.searchResult;
+    const results = searchRes?.map(showResults);
+    function showResults(item: object, index: number) {
+      return `<div
+          className="searchItem"
+          key=${index}
+          >
+            ${item}
+        </div>`
+    };
+
+
     return (
       <>
-        {console.log('ResultPanel props = ', this.props)}
         <div className="panel result-panel">
           <p>Hello</p>
-          <p>{this.props.searchResult}</p>
-          {/* {this.props.state.searchResult} */}
+          {results}
         </div>
       </>
     )

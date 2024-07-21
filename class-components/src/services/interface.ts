@@ -1,10 +1,12 @@
-import React from "react";
+// import { object } from "prop-types";
+// import React from "react";
 export interface SearchProps {
-  searchResult?: [];
-  updateSearchResult?: () => void;
+  searchResult?: object[];
+  updateSearchResult?: () => {};
 }
 
 export type Props = {
-  searchResult?: [];
-  updateSearchResult?: React.Dispatch<React.SetStateAction<string[]>>;
+  searchResult?: object[];
+  updateSearchResult?: (data:[]) => void;
+  // setState?: React.Dispatch<React.SetStateAction<[]>>
 }
