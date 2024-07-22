@@ -5,8 +5,17 @@ export interface SearchProps {
   updateSearchResult?: () => {};
 }
 
+type searchData = {
+  count?: number;
+  next?: string;
+  previous?: string | null;
+  results?: object[];
+}
+
 export type Props = {
-  searchResult?: object[];
+  searchResult?: searchData;
+  searchState?: searchData;
   updateSearchResult?: (data:[]) => void;
+  setSearchState?: (data:[]) => void;
   // setState?: React.Dispatch<React.SetStateAction<[]>>
 }

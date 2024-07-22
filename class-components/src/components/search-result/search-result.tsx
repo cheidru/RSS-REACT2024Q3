@@ -4,7 +4,7 @@ import { Props } from "../../services/interface"
 class ResultPanel extends React.Component<Props> {
 
   render() {
-    console.log('ResultPanel props = ');
+    console.log('ResultPanel props = ', this.props);
     const searchRes = this.props.searchResult;
     const results = searchRes?.map(showResults);
     function showResults(item: object, index: number) {

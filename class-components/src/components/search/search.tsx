@@ -13,14 +13,15 @@ class SearchPanel extends React.Component<Props> {
   }
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log('this.props = ',this.props);
     const seekResult = apiSearch(this.state.searchString.trim());
     seekResult.then(data => {
-      if(this.props.updateSearchResult) this.props.updateSearchResult(data);
+      // if(this.props.updateSearchResult) this.props.updateSearchResult(data);
+      if(this.props.setSearchState) this.props.setSearchState(data);
       console.log('seekResult = ',data);
       })
-      .then(() => {console.log('searchResult = ',this.props.searchResult);}
+      .then(() => {console.log('searchResult = ',this.props.searchState);}
     );
   
     
@@ -38,6 +39,7 @@ class SearchPanel extends React.Component<Props> {
 
 
   render() {
+    console.log('SearchPanel props = ', this.props);
     return (
       <div className="panel search-panel">
         <form className="form-search"
