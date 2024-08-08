@@ -5,17 +5,16 @@ export interface SearchProps {
   updateSearchResult?: () => {};
 }
 
-type searchData = {
-  count?: number;
-  next?: string;
-  previous?: string | null;
-  results?: object[];
+export type searchData = {
+  name?: string;
+  model?: string;
+  manufacturer?: string;
+  cost_in_credits?: number;
+  cargo_capacity?: number;
+  films?: string[];
 }
 
 export type Props = {
-  searchResult?: searchData;
-  searchState?: searchData;
+  searchResult?: searchData[];
   updateSearchResult?: (data:[]) => void;
-  setSearchState?: (data:[]) => void;
-  // setState?: React.Dispatch<React.SetStateAction<[]>>
 }

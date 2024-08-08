@@ -14,8 +14,9 @@ class SearchPanel extends React.Component<Props> {
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log('this.props in SearchPanel = ', this.props);
     const seekResult = apiSearch(this.state.searchString.trim());
-    seekResult.then(data => { if(this.props.setSearchState) this.props.setSearchState(data); });
+    seekResult.then(data => { if(this.props.updateSearchResult) this.props.updateSearchResult(data); });
       
     this.setState({isSubmitDisabled: true});
     this.setState({inputFocused: false});
