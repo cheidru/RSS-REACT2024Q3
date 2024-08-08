@@ -1,9 +1,28 @@
 
 .result-panel {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  background-color:rgb(206, 236, 226);
+}
+
+.result-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: top;
+  gap: 1rem;
+  font-size: 0.5rem;
+}
+
+.card-wrapper {
+  width: 8rem;
+  padding: 1rem;
+  color: white;
+  background-color:rgb(134, 153, 205);
+  border-radius: 0.7rem;
 }
