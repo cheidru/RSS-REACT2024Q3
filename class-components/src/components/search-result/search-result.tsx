@@ -5,23 +5,17 @@ class ResultPanel extends React.Component<Props> {
 
   render() {
     console.log('ResultPanel props = ', this.props);
-    const searchRes = this.props.searchResult;
-    const results = searchRes?.map(showResults);
-    function showResults(item: object, index: number) {
-      return `<div
-          className="searchItem"
-          key=${index}
-          >
-            ${item}
-        </div>`
-    };
-
+    let searchRes = undefined;
+    if (this.props.searchState !== undefined) searchRes = this.props.searchState;
+    console.log('searchRes = ', searchRes.searchResult);
 
     return (
       <>
         <div className="panel result-panel">
           <p>Hello</p>
-          {results}
+          <div className="result-wrapper">
+            {/* {searchRes} */}
+          </div>
         </div>
       </>
     )

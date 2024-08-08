@@ -10,12 +10,12 @@ class App extends React.Component {
   //   searchResult: [],
   // }
 
-  updateSearchResult = (data: []) => {
-    console.log('Updating setState');
-    this.setState(
-      { searchResult: data, }
-    )
-  }
+  // updateSearchResult = (data: []) => {
+  //   console.log('Updating setState');
+  //   this.setState(
+  //     { searchResult: data, }
+  //   )
+  // }
 
   render() {
     return (
@@ -24,7 +24,6 @@ class App extends React.Component {
         <SearchPanel
           searchState = {this.state}
           setSearchState = {(data: []) => {
-            console.log('Updating setState');
             this.setState(
               { searchResult: data }
             )
